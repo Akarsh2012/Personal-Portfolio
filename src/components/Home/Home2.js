@@ -19,37 +19,33 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              I developed a deep passion for programming and have continuously expanded my knowledge and skills.
               <br />
-              <br />I am fluent in classics like
+              <br />I am proficient in languages such as
               <i>
-                <b className="purple"> C++, Javascript and MERN Stack. </b>
+                <b className="purple"> C++, Javascript, C, Java and SQL. </b>
               </i>
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
+              My areas of interest include building cutting-edge &nbsp;
               <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also interested in{" "}
-                <b className="purple">
+                <b className="purple">web technologies and products,</b></i>  with a strong focus on {" "}
+                <i><b className="purple">
                   Algorithms
                 </b>
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
+              Whenever possible, I leverage my expertise in developing high-quality products using
               <i>
                 <b className="purple">
                   {" "}
-                  Modern Javascript Library and Frameworks
+                  modern JavaScript libraries and frameworks,
                 </b>
               </i>
-              &nbsp; like
+              &nbsp; particularly
               <i>
-                <b className="purple"> React.js</b>
-              </i>
+                <b className="purple"> React.js</b></i> and I also relish the opportunity to challenge myself with <a href="https://leetcode.com/u/Akarsh_Singh_2211/"><i><b className="purple">LeetCode</b></i></a> and <a href="https://codeforces.com/profile/Bumble_bee9555"><i><b className="purple">Codeforces</b></i></a> problems, always seeking to innovate and solve complex algorithmic puzzles.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -67,7 +63,7 @@ function Home2() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/monk0707"
+                  href="https://github.com/Akarsh2012"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -87,7 +83,7 @@ function Home2() {
               </li> */}
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/arvind-sharma-3884a2205/"
+                  href="https://www.linkedin.com/in/akarsh-singh-24436a243/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -97,7 +93,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/arvind_mvrx/"
+                  href="https://www.instagram.com/_akarsh_singh_17?igsh=MW1rZTBmMzk3b2M1YQ=="
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

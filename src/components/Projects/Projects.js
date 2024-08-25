@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import eduTechImg from "../../Assets/Projects/eduTechImg.png";
-import ticTacToeImg from "../../Assets/Projects/ticTacToeImg.png";
+import NQueens from "../../Assets/Projects/N-Queens.png";
+import Todo from "../../Assets/Projects/Todo.png";
 import randomPassImg from "../../Assets/Projects/randomPassImg.png";
-import bgmiProjectImg from "../../Assets/Projects/bgmiProjectImg.png";
-import parallaxImg from "../../Assets/Projects/parallaxImg.png";
+import WeatherApp from "../../Assets/Projects/WeatherApp.png";
+import Company from "../../Assets/Projects/Company.png";
 import shoppingCartImg from "../../Assets/Projects/shoppingCartImg.png";
 
 function Projects() {
@@ -23,25 +23,16 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bgmiProjectImg}
+              imgPath={WeatherApp}
               isBlog={false}
-              title="BGMI Tournaments "
-              description="Developed a web application to streamline the process of organizing and participating in BGMI (Battlegrounds Mobile India) tournaments."
-              ghLink="https://github.com/monk0707/bgmi-tournaments"
-              demoLink="https://www.bgmitournaments.in/"
+              title="Weather App "
+              description="Engineered a responsive web application using HTML, CSS, and JavaScript to provide real-time weather information based on user inputs."
+              ghLink="https://github.com/Akarsh2012/Weather-App--by-Akarsh"
+              demoLink="https://weather-app-by-akarsh.netlify.app/"
             />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={shoppingCartImg}
-              isBlog={false}
-              title="SHOPPING CART"
-              description="Developed a versatile and responsive shopping cart application in which users can add and delete items in the cart."
-              ghLink="https://github.com/monk0707/shopping-cart"
-              demoLink="https://lucky-nougat-376edf.netlify.app/"
-            />
-          </Col>
+         
 
           <Col md={4} className="project-card">
             <ProjectCard
@@ -51,41 +42,42 @@ function Projects() {
               description="•	One can set constraints to generate the password like including uppercase letters, lowercase letters, Numbers and Symbols.
 •	One can also set the length of the password to generate and we can also get to know whether the generated password is strong or weak.
 "
-              ghLink="https://github.com/monk0707/random-password-generator"
-              demoLink=" https://monk0707.github.io/random-password-generator/"            
+              ghLink="https://github.com/Akarsh2012/Random-Password-Generator"
+              demoLink="https://random-passwor-generator-by-akarsh.netlify.app/"            
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={eduTechImg}
+              imgPath={NQueens}
               isBlog={false}
-              title="EduConnect"
-              description="EduConnect is a cutting-edge educational platform built using the MERN stack (MongoDB, Express.js, React, Node.js), designed to revolutionize online learning. This platform offers a seamless, interactive, and engaging learning experience for students and educators alike. With features like real-time collaboration, personalized learning paths, and an intuitive user interface, EduConnect bridges the gap between traditional classrooms and modern digital education. Whether you're looking to enhance your skills or share your knowledge, EduConnect provides the tools and community to support your educational journey."
-              demoLink="https://study-notion-edtech-frontend-pink.vercel.app/"
+              title="N-Queens Visualiser"
+              description="Created a visual tool using HTML, CSS, and JavaScript to illustrate the N-Queens problem, showcasing solutions for different sizes of chessboards and demonstrating the use of recursion and backtracking algorithms in real-time."
+              ghLink="https://github.com/Akarsh2012/N-Queens-Visualiser"
+              demoLink="https://n-queens-visualiser-by-akarsh.netlify.app"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={parallaxImg}
+              imgPath={Company}
               isBlog={false}
-              title="Parallax Effect"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/monk0707/parallax-effect"
-              demoLink="https://monk0707.github.io/parallax-effect/"
+              title="Company's Web-Portfolio"
+              description="A Company's Portfolio Web Page built using HTML, CSS, and JavaScript showcases the company's services, projects, and team members, with interactive features and a responsive design for a seamless user experience."
+              ghLink="https://github.com/Akarsh2012/Company-Web-Page"
+              demoLink="https://incredible-sunburst-20232b.netlify.app/"
               //  <--------Please include a demo link here
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={ticTacToeImg}
+              imgPath={Todo}
               isBlog={false}
-              title="TicTacTwist"
-              description="TicTacTwist is a modern take on the classic Tic Tac Toe game, crafted with JavaScript and styled with Tailwind CSS for a sleek and responsive design. This game offers a delightful user experience with smooth animations, intuitive gameplay, and a minimalist interface. Whether you're playing against a friend or challenging the computer, TicTacTwist provides a fun and engaging way to enjoy this timeless game, all from the convenience of your web browser. Dive into a world where strategy meets style, and see if you can outsmart your opponent in this reimagined classic!"
-              ghLink="https://github.com/monk0707/tictac"
-              demoLink="https://monk0707.github.io/tictac/"      
+              title="To-Do"
+              description="Developed a To-Do List application for efficient task management, enhancing user productivity by 30%. Implemented features such as adding, editing, and deleting tasks, with local storage integration to persist data across page reloads, ensuring task management continuity."
+              ghLink="https://github.com/Akarsh2012/To-Do-List"
+              demoLink="https://to-do-list-by-akarsh.netlify.app/"      
               // <--------Please include a demo link here 
             />
           </Col>
