@@ -7,7 +7,9 @@ import Todo from "../../Assets/Projects/Todo.png";
 import randomPassImg from "../../Assets/Projects/randomPassImg.png";
 import WeatherApp from "../../Assets/Projects/WeatherApp.png";
 import Company from "../../Assets/Projects/Company.png";
-import shoppingCartImg from "../../Assets/Projects/shoppingCartImg.png";
+import Shortify from "../../Assets/Projects/Shortify.png";
+import HeadlinesHub from "../../Assets/Projects/HeadlinesHub.png";
+
 
 function Projects() {
   return (
@@ -21,6 +23,34 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Shortify}
+              isBlog={false}
+              title="Shortify "
+              description="Developed a high-performance URL shortening service using Node.js, Express.js, and EJS. It efficiently provides real-time analytics with click tracking, and ensuring optimal performance across devices​."
+              ghLink="https://github.com/Akarsh2012/Shortify"
+              demoLink="https://shortify-n3ul.onrender.com/shortify"
+            />
+          </Col>
+
+
+
+            <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={HeadlinesHub}
+              isBlog={false}
+              title="HeadlinesHub"
+              description="HeadlinesHub is a React-based news application that delivers the latest top headlines and breaking news from the United States and around the world. Built using modern web technologies, the app provides users with a clean and responsive interface to stay informed with up-to-the-minute news."
+              ghLink="https://github.com/Akarsh2012/HeadlinesHub"
+              demoLink=" https://drive.google.com/file/d/19NZa726rbiizM1Yl9K_dU7kNQUfoy3jm/view?usp=drive_link"
+            />
+          </Col>
+
+
+
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={WeatherApp}
