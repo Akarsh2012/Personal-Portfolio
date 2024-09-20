@@ -4,8 +4,6 @@ import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
-  DiNodejs,
-  DiMongodb,
   // DiPython,
   DiGit,
   DiJava,
@@ -21,8 +19,7 @@ import {
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
-import { TbBrandVscode } from "react-icons/tb";
+
 import { SiThealgorithms } from "react-icons/si";
 
 // import { TbBrandGolang } from "react-icons/tb";
