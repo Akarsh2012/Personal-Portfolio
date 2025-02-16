@@ -7,9 +7,10 @@ import Todo from "../../Assets/Projects/Todo.png";
 import randomPassImg from "../../Assets/Projects/randomPassImg.png";
 import WeatherApp from "../../Assets/Projects/WeatherApp.png";
 import Company from "../../Assets/Projects/Company.png";
+import ImaginIQAI from "../../Assets/Projects/ImaginIQ-AI.png";
+
 import Shortify from "../../Assets/Projects/Shortify.png";
 import HeadlinesHub from "../../Assets/Projects/HeadlinesHub.png";
-
 
 function Projects() {
   return (
@@ -23,8 +24,18 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={ImaginIQAI}
+              isBlog={false}
+              title="ImaginIQ-AI "
+              description="Built an AI-powered image generation platform using the MERN stack, integrating Cloudinary for scalable storage and delivering high-quality, user-customized outputs​."
+              ghLink="https://github.com/Akarsh2012/ImaginIQ"
+              demoLink="https://melodious-tanuki-546e92.netlify.app/"
+            />
+          </Col>
 
-        <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
               imgPath={Shortify}
               isBlog={false}
@@ -35,9 +46,7 @@ function Projects() {
             />
           </Col>
 
-
-
-            <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
               imgPath={HeadlinesHub}
               isBlog={false}
@@ -47,9 +56,6 @@ function Projects() {
               demoLink=" https://drive.google.com/file/d/19NZa726rbiizM1Yl9K_dU7kNQUfoy3jm/view?usp=drive_link"
             />
           </Col>
-
-
-
 
           <Col md={4} className="project-card">
             <ProjectCard
@@ -62,8 +68,6 @@ function Projects() {
             />
           </Col>
 
-         
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={randomPassImg}
@@ -73,7 +77,7 @@ function Projects() {
 •	One can also set the length of the password to generate and we can also get to know whether the generated password is strong or weak.
 "
               ghLink="https://github.com/Akarsh2012/Random-Password-Generator"
-              demoLink="https://random-passwor-generator-by-akarsh.netlify.app/"            
+              demoLink="https://random-passwor-generator-by-akarsh.netlify.app/"
             />
           </Col>
 
@@ -107,8 +111,8 @@ function Projects() {
               title="To-Do"
               description="Developed a To-Do List application for efficient task management, enhancing user productivity by 30%. Implemented features such as adding, editing, and deleting tasks, with local storage integration to persist data across page reloads, ensuring task management continuity."
               ghLink="https://github.com/Akarsh2012/To-Do-List"
-              demoLink="https://to-do-list-by-akarsh.netlify.app/"      
-              // <--------Please include a demo link here 
+              demoLink="https://to-do-list-by-akarsh.netlify.app/"
+              // <--------Please include a demo link here
             />
           </Col>
         </Row>
