@@ -2,10 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
@@ -18,7 +15,8 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I developed a deep passion for programming and have continuously expanded my knowledge and skills.
+              I developed a deep passion for programming and have continuously
+              expanded my knowledge and skills.
               <br />
               <br />I am proficient in languages such as
               <i>
@@ -28,14 +26,16 @@ function Home2() {
               <br />
               My areas of interest include building cutting-edge &nbsp;
               <i>
-                <b className="purple">web technologies and products,</b></i>  with a strong focus on {" "}
-                <i><b className="purple">
-                  Algorithms
-                </b>
+                <b className="purple">web technologies and products,</b>
+              </i>{" "}
+              with a strong focus on{" "}
+              <i>
+                <b className="purple">Algorithms</b>
               </i>
               <br />
               <br />
-              Whenever possible, I leverage my expertise in developing high-quality products using
+              Whenever possible, I leverage my expertise in developing
+              high-quality products using
               <i>
                 <b className="purple">
                   {" "}
@@ -44,7 +44,22 @@ function Home2() {
               </i>
               &nbsp; particularly
               <i>
-                <b className="purple"> React.js</b></i> and I also relish the opportunity to challenge myself with <a href="https://leetcode.com/u/Akarsh_Singh_2211/"><i><b className="purple">LeetCode</b></i></a> and <a href="https://codeforces.com/profile/Bumble_bee9555"><i><b className="purple">Codeforces</b></i></a> problems, always seeking to innovate and solve complex algorithmic puzzles.
+                <b className="purple"> React.js</b>
+              </i>{" "}
+              and I also relish the opportunity to challenge myself with{" "}
+              <a href="https://leetcode.com/u/Akarsh_Singh_2211/">
+                <i>
+                  <b className="purple">LeetCode</b>
+                </i>
+              </a>{" "}
+              and{" "}
+              <a href="https://codeforces.com/profile/Unknown_2211">
+                <i>
+                  <b className="purple">Codeforces</b>
+                </i>
+              </a>{" "}
+              problems, always seeking to innovate and solve complex algorithmic
+              puzzles.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

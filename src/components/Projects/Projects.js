@@ -11,6 +11,7 @@ import ImaginIQAI from "../../Assets/Projects/ImaginIQ-AI.png";
 
 import Shortify from "../../Assets/Projects/Shortify.png";
 import HeadlinesHub from "../../Assets/Projects/HeadlinesHub.png";
+import subdub from "../../Assets/Projects/SUBDub.png";
 
 function Projects() {
   return (
@@ -24,6 +25,16 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={subdub}
+              isBlog={false}
+              title="SUbscription-Tracker-API "
+              description="Subscription Tracker API is a production-ready backend system designed to help users efficiently manage and track their digital subscriptions — handling real users, real money, and real-world business logic."
+              ghLink="https://github.com/Akarsh2012/Subscription-Tracker-API"
+              demoLink="https://github.com/Akarsh2012/Subscription-Tracker-API"
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={ImaginIQAI}
