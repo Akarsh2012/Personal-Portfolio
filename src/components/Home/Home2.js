@@ -4,6 +4,7 @@ import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 function Home2() {
   return (
@@ -15,51 +16,41 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I developed a deep passion for programming and have continuously
-              expanded my knowledge and skills.
+              I'm a <b className="purple">Software Engineer at Varuna Sentinels B.V.</b> (Netherlands),
+              where I build enterprise-grade marine procurement systems handling
+              real users, real money, and complex business logic.
               <br />
-              <br />I am proficient in languages such as
+              <br />
+              I work across the full stack with
               <i>
-                <b className="purple"> C++, Javascript, C, Java and SQL. </b>
+                <b className="purple"> Angular, React, Node.js, MySQL, and AWS </b>
+              </i>
+              — building everything from real-time WebSocket chat systems to
+              <i>
+                <b className="purple"> AI-powered chatbots using Google Gemini.</b>
               </i>
               <br />
               <br />
-              My areas of interest include building cutting-edge &nbsp;
-              <i>
-                <b className="purple">web technologies and products,</b>
-              </i>{" "}
-              with a strong focus on{" "}
-              <i>
-                <b className="purple">Algorithms</b>
-              </i>
+              I've optimized page loads from
+              <b className="purple"> 48s to 8s</b>, built
+              <b className="purple"> 15+ full-stack modules</b>, and
+              designed secure token-based authentication systems with
+              <b className="purple"> JWT + HMAC-SHA256</b>.
               <br />
               <br />
-              Whenever possible, I leverage my expertise in developing
-              high-quality products using
-              <i>
-                <b className="purple">
-                  {" "}
-                  modern JavaScript libraries and frameworks,
-                </b>
-              </i>
-              &nbsp; particularly
-              <i>
-                <b className="purple"> React.js</b>
-              </i>{" "}
-              and I also relish the opportunity to challenge myself with{" "}
+              I also sharpen my skills on{" "}
               <a href="https://leetcode.com/u/Akarsh_Singh_2211/">
                 <i>
                   <b className="purple">LeetCode</b>
                 </i>
               </a>{" "}
-              and{" "}
+              (Knight Badge, Global Rank 700) and{" "}
               <a href="https://codeforces.com/profile/Unknown_2211">
                 <i>
                   <b className="purple">Codeforces</b>
                 </i>
               </a>{" "}
-              problems, always seeking to innovate and solve complex algorithmic
-              puzzles.
+              (Specialist, 1432 rating).
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -113,6 +104,16 @@ function Home2() {
                   className="icon-colour home-social-icons"
                 >
                   <AiFillInstagram />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:akarshs145@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                >
+                  <MdEmail />
                 </a>
               </li>
             </ul>

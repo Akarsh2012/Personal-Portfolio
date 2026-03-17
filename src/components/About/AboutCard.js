@@ -8,12 +8,16 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Akarsh Singh </span>
-            from <span className="purple"> Uttar Pradesh, India.</span>
+            Hi Everyone, I am <span className="purple">Akarsh Singh</span>,
+            a <span className="purple">Software Engineer</span> based in
+            <span className="purple"> Delhi, India.</span>
             <br />
-            I am currently pursuing my B.Tech in Electrical Engineering from Motilal Nehru National Institute of Technology Allahabad (2021-2025)
             <br />
-
+            I graduated with a B.Tech in Electrical Engineering from
+            <span className="purple"> MNNIT Allahabad</span> (CGPA: 7.6/10)
+            and currently work at
+            <span className="purple"> Varuna Sentinels B.V.</span> (Netherlands HQ),
+            building enterprise-grade marine procurement systems.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!

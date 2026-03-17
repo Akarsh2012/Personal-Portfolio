@@ -741,3 +741,135 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* --------- */
+/* Experience */
+/* --------- */
+.experience-section {
+  position: relative !important;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+
+.timeline-date {
+  color: #c770f0 !important;
+  font-weight: 500 !important;
+}
+
+.experience-highlights {
+  margin-top: 15px;
+}
+
+.exp-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.exp-highlight-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.exp-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.exp-tag {
+  background: rgba(199, 112, 240, 0.15);
+  color: #c770f0;
+  border: 1px solid rgba(199, 112, 240, 0.3);
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Override timeline defaults for dark theme */
+.vertical-timeline-element-date {
+  color: #c770f0 !important;
+}
+
+.vertical-timeline::before {
+  background: rgba(200, 137, 230, 0.4) !important;
+}
+
+/* --------- */
+/* Achievements */
+/* --------- */
+.achievement-card {
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s ease;
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(199, 112, 240, 0.3);
+  border-color: rgba(200, 137, 230, 0.9);
+}
+
+.achievement-icon {
+  color: #c770f0;
+  margin-bottom: 15px;
+}
+
+.achievement-highlight {
+  background: linear-gradient(135deg, #623686, #c770f0);
+  color: white;
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.achievement-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.achievement-subtitle {
+  color: #c770f0;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.achievement-description {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.achievement-link {
+  color: #c770f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.achievement-link:hover {
+  color: #e0a0ff;
+  text-decoration: underline;
+}
