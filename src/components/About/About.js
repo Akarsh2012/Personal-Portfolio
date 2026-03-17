@@ -7,6 +7,7 @@ import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 import Achievements from "../Achievements/Achievements";
+import Testimonials from "../Testimonials/Testimonials";
 
 function About() {
   return (
@@ -47,6 +48,8 @@ function About() {
         <Toolstack />
 
         <Achievements />
+
+        <Testimonials />
 
         <Github />
       </Container>

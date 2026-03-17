@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
@@ -6,10 +6,73 @@ import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const counted = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !counted.current) {
+          counted.current = true;
+          const startTime = Date.now();
+          const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
+
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
+        {/* Animated Stats */}
+        <Row className="stats-row" style={{ justifyContent: "center", paddingBottom: "40px" }}>
+          <Col xs={6} md={3} className="stats-item">
+            <h2 className="stats-number purple">
+              <AnimatedCounter end={83} suffix="%" />
+            </h2>
+            <p className="stats-label">Page Load Reduction</p>
+          </Col>
+          <Col xs={6} md={3} className="stats-item">
+            <h2 className="stats-number purple">
+              <AnimatedCounter end={15} suffix="+" />
+            </h2>
+            <p className="stats-label">Full-Stack Modules</p>
+          </Col>
+          <Col xs={6} md={3} className="stats-item">
+            <h2 className="stats-number purple">
+              <AnimatedCounter end={500} suffix="+" />
+            </h2>
+            <p className="stats-label">LeetCode Problems</p>
+          </Col>
+          <Col xs={6} md={3} className="stats-item">
+            <h2 className="stats-number purple">
+              <AnimatedCounter end={700} />
+            </h2>
+            <p className="stats-label">Global Rank (LeetCode)</p>
+          </Col>
+        </Row>
+
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>

@@ -7,11 +7,14 @@ import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import Experience from "./components/Experience/Experience";
+import Blog from "./components/Blog/Blog";
+import BlogPost from "./components/Blog/BlogPost";
+import Contact from "./components/Contact/Contact";
+import NotFound from "./components/NotFound/NotFound";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
@@ -41,7 +44,10 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
