@@ -9,10 +9,10 @@ import Toolstack from "./Toolstack";
 import Achievements from "../Achievements/Achievements";
 import Testimonials from "../Testimonials/Testimonials";
 
-function About() {
+function About({ embedded = false }) {
   return (
     <Container fluid className="about-section">
-      <Particle />
+      {!embedded && <Particle />}
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
@@ -23,9 +23,9 @@ function About() {
               paddingBottom: "50px",
             }}
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+            <h2 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
             Acknowledge my <strong className="purple">identity</strong>
-            </h1>
+            </h2>
             <Aboutcard />
           </Col>
           <Col
@@ -37,14 +37,14 @@ function About() {
           </Col>
         </Row>
 
-        <h1 className="project-heading">
+        <h2 className="project-heading">
           Professional <strong className="purple">Skillset </strong>
-        </h1>
+        </h2>
         <Techstack />
 
-        <h1 className="project-heading">
+        <h2 className="project-heading">
           <strong className="purple">Tools</strong> I use
-        </h1>
+        </h2>
         <Toolstack />
 
         <Achievements />

@@ -25,26 +25,18 @@ function Footer() {
               <a
                 href="https://github.com/Akarsh2012"
                 style={{ color: "white" }}
+                aria-label="GitHub profile"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
                 <AiFillGithub />
               </a>
             </li>
-            {/* <li className="social-icons">
-              <a
-                href="https://twitter.com/Soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li> */}
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/akarsh-singh-24436a243/"
                 style={{ color: "white" }}
+                aria-label="LinkedIn profile"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -55,6 +47,7 @@ function Footer() {
               <a
                 href="https://www.instagram.com/_akarsh_singh_17?igsh=MW1rZTBmMzk3b2M1YQ=="
                 style={{ color: "white" }}
+                aria-label="Instagram profile"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -65,6 +58,7 @@ function Footer() {
               <a
                 href="mailto:akarshs145@gmail.com"
                 style={{ color: "white" }}
+                aria-label="Email Akarsh"
                 target="_blank"
                 rel="noopener noreferrer"
               >

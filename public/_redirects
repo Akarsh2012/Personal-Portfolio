@@ -1,0 +1,3 @@
+# Single-page app: every route must be served index.html so that
+# deep links and refreshes resolve instead of returning Netlify's 404.
+/*  /index.html  200

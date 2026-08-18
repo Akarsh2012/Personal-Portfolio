@@ -5,6 +5,7 @@ import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import ImpactSection from "./ImpactSection";
 
 function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -43,7 +44,7 @@ function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
+    <Container fluid className="home-about-section" id="intro">
       <Container>
         {/* Animated Stats */}
         <Row className="stats-row" style={{ justifyContent: "center", paddingBottom: "40px" }}>
@@ -55,15 +56,15 @@ function Home2() {
           </Col>
           <Col xs={6} md={3} className="stats-item">
             <h2 className="stats-number purple">
-              <AnimatedCounter end={15} suffix="+" />
+              <AnimatedCounter end={40} suffix="+" />
             </h2>
-            <p className="stats-label">Full-Stack Modules</p>
+            <p className="stats-label">Modules Shipped End-to-End</p>
           </Col>
           <Col xs={6} md={3} className="stats-item">
             <h2 className="stats-number purple">
-              <AnimatedCounter end={500} suffix="+" />
+              <AnimatedCounter end={14} />
             </h2>
-            <p className="stats-label">LeetCode Problems</p>
+            <p className="stats-label">Months in Production</p>
           </Col>
           <Col xs={6} md={3} className="stats-item">
             <h2 className="stats-number purple">
@@ -73,32 +74,44 @@ function Home2() {
           </Col>
         </Row>
 
+        {/* Proof before prose: the numbers are what a recruiter scans
+            for, so they sit directly under the headline stats rather
+            than below a paragraph of introduction. */}
+        <ImpactSection />
+
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+            <h2 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
+            </h2>
             <p className="home-about-body">
               I'm a <b className="purple">Software Engineer at Varuna Sentinels B.V.</b> (Netherlands),
-              where I build enterprise-grade marine procurement systems handling
-              real users, real money, and complex business logic.
+              working on a B2B procurement platform used by buyers, suppliers,
+              and administrators. I own features
+              <b className="purple"> end to end</b> — I design the tables, write
+              the queries, build the APIs, ship the interface, and then go back
+              and make it fast.
               <br />
               <br />
-              I work across the full stack with
+              Day to day that means
               <i>
-                <b className="purple"> Angular, React, Node.js, MySQL, and AWS </b>
+                <b className="purple"> Angular, Node.js, MySQL, Sequelize, and AWS</b>
               </i>
-              — building everything from real-time WebSocket chat systems to
-              <i>
-                <b className="purple"> AI-powered chatbots using Google Gemini.</b>
-              </i>
+              . Over <b className="purple">14 months</b> I've shipped
+              <b className="purple"> 40+ modules</b> across all three portals —
+              bulk import/export, invoicing, compliance, notifications,
+              dashboards, real-time messaging, and a role-scoped
+              <b className="purple"> AI assistant built on Google Gemini</b>.
               <br />
               <br />
-              I've optimized page loads from
-              <b className="purple"> 48s to 8s</b>, built
-              <b className="purple"> 15+ full-stack modules</b>, and
-              designed secure token-based authentication systems with
-              <b className="purple"> JWT + HMAC-SHA256</b>.
+              The work I'm proudest of is the unglamorous kind: cutting the
+              heaviest screen from
+              <b className="purple"> 48s to 8s</b>, rewriting a subquery from
+              <b className="purple"> O(M×N) to O(M+N)</b>, and designing
+              passwordless
+              <b className="purple"> HMAC-SHA256 token access</b> that lets
+              external suppliers transact securely without ever creating an
+              account.
               <br />
               <br />
               I also sharpen my skills on{" "}
@@ -122,9 +135,10 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h2>FIND ME ON</h2>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -133,26 +147,18 @@ function Home2() {
                 <a
                   href="https://github.com/Akarsh2012"
                   target="_blank"
+                  aria-label="GitHub profile"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
               </li>
-              {/* <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li> */}
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/akarsh-singh-24436a243/"
                   target="_blank"
+                  aria-label="LinkedIn profile"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
@@ -163,6 +169,7 @@ function Home2() {
                 <a
                   href="https://www.instagram.com/_akarsh_singh_17?igsh=MW1rZTBmMzk3b2M1YQ=="
                   target="_blank"
+                  aria-label="Instagram profile"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
@@ -173,6 +180,7 @@ function Home2() {
                 <a
                   href="mailto:akarshs145@gmail.com"
                   target="_blank"
+                  aria-label="Email Akarsh"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >

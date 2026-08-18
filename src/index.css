@@ -1,7 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+/* Raleway is loaded from index.html with preconnect + a non-blocking
+   stylesheet. An @import here would serialise the request behind the
+   CSS bundle and block first paint.
+
+   Because the real font arrives after first paint, the fallback has to
+   occupy near-identical space or the text reflows when it swaps. These
+   overrides scale a local grotesque to Raleway's metrics, which keeps
+   cumulative layout shift near zero. */
+@font-face {
+  font-family: "Raleway Fallback";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans"),
+    local("DejaVu Sans");
+  size-adjust: 96%;
+  ascent-override: 97.9%;
+  descent-override: 24.4%;
+  line-gap-override: 0%;
+}
+
 body {
   margin: 0;
-  font-family: "Raleway", serif !important;
+  font-family: "Raleway", "Raleway Fallback", system-ui, -apple-system,
+    "Segoe UI", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));

@@ -9,14 +9,14 @@ import "react-vertical-timeline-component/style.min.css";
 import { MdWork } from "react-icons/md";
 import { IoSchool } from "react-icons/io5";
 
-function Experience() {
+function Experience({ embedded = false }) {
   return (
     <Container fluid className="experience-section">
-      <Particle />
+      {!embedded && <Particle />}
       <Container>
-        <h1 className="project-heading">
+        <h2 className="project-heading">
           My <strong className="purple">Experience</strong>
-        </h1>
+        </h2>
         <p style={{ color: "white" }}>
           Where I've worked and what I've built.
         </p>
@@ -52,43 +52,49 @@ function Experience() {
               Varuna Sentinels B.V. — Hybrid (Netherlands HQ)
             </h4>
             <p style={{ fontSize: "0.85rem", color: "#ccc", marginTop: "4px", marginBottom: "12px" }}>
-              VS-MPS (Marine Procurement System) | Varuna Marine Group
+              B2B procurement platform — buyer, supplier & admin portals. Reporting to the CTO.
+            </p>
+
+            <p style={{ fontSize: "0.88rem", color: "#ddd", marginBottom: "14px", lineHeight: "1.6" }}>
+              I own verticals end to end: schema design, stored procedures,
+              APIs, and the Angular UI on top. What follows is ordered by what
+              I was trusted with, not by ticket.
             </p>
 
             <div className="experience-highlights">
               <div className="exp-highlight-item">
                 <span className="exp-highlight-icon">&#9889;</span>
-                <span>Optimized MySQL stored procedures & RFQ/PO/Invoice APIs via Sequelize ORM, cutting DB latency by <strong className="purple">70%</strong> and reducing page loads from <strong className="purple">48s to 8s</strong></span>
-              </div>
-
-              <div className="exp-highlight-item">
-                <span className="exp-highlight-icon">&#128172;</span>
-                <span>Built a production <strong className="purple">AI-powered analytics chatbot</strong> using Google Gemini with role-based quick actions, natural language dashboard queries, and intelligent supplier evaluation — <strong className="purple">owned end-to-end</strong></span>
-              </div>
-
-              <div className="exp-highlight-item">
-                <span className="exp-highlight-icon">&#128274;</span>
-                <span>Developed secure Buyer-Supplier <strong className="purple">real-time messaging</strong> with WebSockets, JWT + HMAC-SHA256 auth, and AWS Lambda/API Gateway</span>
-              </div>
-
-              <div className="exp-highlight-item">
-                <span className="exp-highlight-icon">&#128202;</span>
-                <span>Delivered dynamic Buyer/Supplier <strong className="purple">dashboards</strong> with Chart.js analytics, animated stats, trend indicators, and real-time data sync</span>
-              </div>
-
-              <div className="exp-highlight-item">
-                <span className="exp-highlight-icon">&#128268;</span>
-                <span>Architected <strong className="purple">15+ full-stack modules</strong> (Import/Export, Notifications, Support Tickets, Invoices, RFQ Token Auth) with ExcelJS, S3, and stored procedures</span>
+                <span><strong className="purple">Performance.</strong> Profiled and rebuilt the four heaviest screens — <strong className="purple">48s &rarr; 8s</strong> on the worst, 62–71% on the rest. Consolidated 12 API calls to 3, projected only rendered columns, replaced a correlated subquery with JSON aggregation (<strong className="purple">O(M×N) &rarr; O(M+N)</strong>), and swapped recursive CTEs for non-recursive equivalents. No caching layer, no new infrastructure.</span>
               </div>
 
               <div className="exp-highlight-item">
                 <span className="exp-highlight-icon">&#128273;</span>
-                <span>Designed secure <strong className="purple">RFQ token-based guest access</strong> system with short-lived JWTs, HMAC-SHA256, and middleware-enforced scope validation</span>
+                <span><strong className="purple">Passwordless access.</strong> Designed a two-token system letting external suppliers quote and submit compliance documents with <strong className="purple">no account</strong> — short <strong className="purple">HMAC-SHA256</strong> tokens exchanged for short-lived scoped JWTs, with middleware that <em>injects</em> identity from token context rather than trusting request parameters.</span>
               </div>
 
               <div className="exp-highlight-item">
-                <span className="exp-highlight-icon">&#128231;</span>
-                <span>Built <strong className="purple">10+ HTML email templates</strong> with SES, PO confirmation PDFs, and cross-client compatible designs (Gmail/Outlook/Yahoo)</span>
+                <span className="exp-highlight-icon">&#129302;</span>
+                <span><strong className="purple">Role-scoped AI assistant.</strong> Built the tool-registration, retrieval, execution and orchestration layers over <strong className="purple">Google Gemini</strong>. Read-only tools, per-role manifests, field allowlists, and identity resolved from the session — so a supplier's assistant structurally cannot read a buyer's data. Deterministic fallbacks keep it useful when the model is down.</span>
+              </div>
+
+              <div className="exp-highlight-item">
+                <span className="exp-highlight-icon">&#128230;</span>
+                <span><strong className="purple">40+ modules shipped</strong> across all three portals — a reusable Excel import/export framework spanning <strong className="purple">25+ business modules</strong>, invoicing with commission and currency conversion, KYC compliance, notifications, support tickets, and dashboards with custom date-range analytics.</span>
+              </div>
+
+              <div className="exp-highlight-item">
+                <span className="exp-highlight-icon">&#128274;</span>
+                <span><strong className="purple">Real-time messaging</strong> on API Gateway WebSockets + Lambda, persisting before delivery so an offline recipient never loses a message. Later merged three separate conversation sources into one unified inbox.</span>
+              </div>
+
+              <div className="exp-highlight-item">
+                <span className="exp-highlight-icon">&#128737;</span>
+                <span><strong className="purple">Found and fixed a cross-tenant data exposure</strong> caused by a hardcoded identifier, and hardened onboarding into a single transaction across Cognito and the database with rollback on partial failure.</span>
+              </div>
+
+              <div className="exp-highlight-item">
+                <span className="exp-highlight-icon">&#128295;</span>
+                <span><strong className="purple">Judgment under risk.</strong> Shipped a full PDF-layout redesign behind an environment-based fallback switch so it could be rolled back instantly; resolved a production JWT failure caused by a config gap across environments.</span>
               </div>
             </div>
 
@@ -107,7 +113,7 @@ function Experience() {
               <span className="exp-tag">ExcelJS</span>
               <span className="exp-tag">PDFMake</span>
               <span className="exp-tag">Google Gemini</span>
-              <span className="exp-tag">Redis</span>
+              <span className="exp-tag">SES</span>
               <span className="exp-tag">Serverless</span>
             </div>
           </VerticalTimelineElement>

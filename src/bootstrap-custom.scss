@@ -1,0 +1,35 @@
+// Bootstrap, trimmed to the parts this site actually uses.
+//
+// The full bootstrap.min.css is ~164 KB and render-blocking, but the
+// portfolio only uses the grid, cards, buttons, the navbar and a few
+// utilities. Everything else — forms, modals, carousel, accordion,
+// pagination, toasts, offcanvas, tooltips — was shipping to every
+// visitor and never rendering anything.
+
+// Required infrastructure (no CSS output on its own)
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Base
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+
+// Layout — Container / Row / Col
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+// Components in use
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/close";
+
+// Helpers + the utility API (.img-fluid, spacing, display, text-*)
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/utilities/api";

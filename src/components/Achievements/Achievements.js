@@ -34,9 +34,9 @@ function Achievements() {
 
   return (
     <Container>
-      <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+      <h2 className="project-heading" style={{ paddingBottom: "20px" }}>
         <strong className="purple">Achievements</strong>
-      </h1>
+      </h2>
       <Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
         {achievements.map((achievement, index) => (
           <Col md={4} key={index} style={{ padding: "15px" }}>

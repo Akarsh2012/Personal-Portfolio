@@ -62,17 +62,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/experience"
+                to="/#experience"
                 onClick={() => updateExpanded(false)}
               >
                 <MdWorkOutline style={{ marginBottom: "2px" }} /> Experience
@@ -82,13 +72,25 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/project"
+                to="/#projects"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            {/* About sits after the work it supports, matching the
+                order the page itself scrolls in. */}
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/#about"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
@@ -115,7 +117,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/contact"
+                to="/#contact"
                 onClick={() => updateExpanded(false)}
               >
                 <FaEnvelope style={{ marginBottom: "2px" }} /> Contact

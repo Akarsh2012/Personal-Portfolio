@@ -27,3 +27,15 @@ yarn-error.log*
 
 Server/node_modules
 Server/config.js
+
+# Private working notes — internal work history, planning and strategy.
+# These are not part of the site and must never be published.
+my_work_at_Varuna_Sentinels.txt
+PORTFOLIO_STRATEGY.md
+task.md
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+Thumbs.db

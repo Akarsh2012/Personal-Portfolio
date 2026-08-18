@@ -5,7 +5,7 @@ import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdSend } from "react-icons/md";
 
-function Contact() {
+function Contact({ embedded = false }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,11 +52,11 @@ function Contact() {
 
   return (
     <Container fluid className="contact-section">
-      <Particle />
+      {!embedded && <Particle />}
       <Container>
-        <h1 className="project-heading">
+        <h2 className="project-heading">
           Get In <strong className="purple">Touch</strong>
-        </h1>
+        </h2>
         <p style={{ color: "white", textAlign: "center" }}>
           Have a question or want to work together? Drop me a message!
         </p>
@@ -169,6 +169,7 @@ function Contact() {
                   target="_blank"
                   rel="noreferrer"
                   className="contact-social-icon"
+                  aria-label="GitHub profile"
                 >
                   <AiFillGithub />
                 </a>
@@ -177,6 +178,7 @@ function Contact() {
                   target="_blank"
                   rel="noreferrer"
                   className="contact-social-icon"
+                  aria-label="LinkedIn profile"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -185,6 +187,7 @@ function Contact() {
                   target="_blank"
                   rel="noreferrer"
                   className="contact-social-icon"
+                  aria-label="Instagram profile"
                 >
                   <AiFillInstagram />
                 </a>

@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Akarsh Singh",
+  "name": "Akarsh Singh — Software Engineer",
+  "description": "Software engineer building production B2B systems end to end.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0c0513",
+  "background_color": "#0c0513"
 }

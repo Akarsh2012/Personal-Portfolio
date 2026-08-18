@@ -14,9 +14,9 @@ function Testimonials() {
 
   return (
     <Container style={{ paddingTop: "30px", paddingBottom: "30px" }}>
-      <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+      <h2 className="project-heading" style={{ paddingBottom: "20px" }}>
         What People <strong className="purple">Say</strong>
-      </h1>
+      </h2>
       <Row style={{ justifyContent: "center" }}>
         {testimonials.map((t, index) => (
           <Col md={8} key={index} style={{ padding: "15px" }}>
@@ -31,7 +31,7 @@ function Testimonials() {
                     .join("")}
                 </div>
                 <div>
-                  <h4 className="testimonial-name">{t.name}</h4>
+                  <h3 className="testimonial-name">{t.name}</h3>
                   <p className="testimonial-role">{t.role}</p>
                 </div>
               </div>

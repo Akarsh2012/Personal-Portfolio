@@ -3,32 +3,109 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%./logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0c0513" />
 
-  <!-- Primary Meta Tags -->
-  <title>Akarsh Singh | Software Engineer | Portfolio</title>
-  <meta name="title" content="Akarsh Singh | Software Engineer | Portfolio" />
-  <meta name="description" content="Software Engineer at Varuna Sentinels B.V. specializing in Angular, React, Node.js, MySQL, and AWS. Building enterprise-grade marine procurement systems. MNNIT Allahabad graduate." />
-  <meta name="keywords" content="Akarsh Singh, Software Engineer, Full Stack Developer, Angular, React, Node.js, AWS, MNNIT Allahabad, Portfolio, Web Developer" />
-  <meta name="author" content="Akarsh Singh" />
-  <meta name="robots" content="index, follow" />
+  <!-- Fonts: preconnect, then load without blocking render. Weights
+       400–700 are requested explicitly so bold text is a real cut
+       rather than a synthesised one. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload starts the fetch at once; the print/onload swap keeps it
+       off the render-blocking path. Together they shorten the window in
+       which fallback metrics are on screen, which is what causes shift. -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+    media="print"
+    onload="this.media='all'; this.onload=null;"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+    />
+  </noscript>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- Canonical: must match the live domain, or search engines
+       de-duplicate this page away to a host that doesn't exist. -->
+  <link rel="canonical" href="https://akarshsingh-portfolio.netlify.app/" />
+
+  <!-- Primary Meta Tags -->
+  <title>Akarsh Singh | Software Engineer</title>
+  <meta name="title" content="Akarsh Singh | Software Engineer" />
+  <meta name="description"
+    content="Software engineer with 14 months of production ownership on a B2B marine procurement platform. Full-stack across Angular, Node.js, MySQL and AWS — schema design, query optimization, secure token-based access, and measured performance engineering." />
+  <meta name="author" content="Akarsh Singh" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Akarsh Singh — Portfolio" />
+  <meta property="og:url" content="https://akarshsingh-portfolio.netlify.app/" />
   <meta property="og:title" content="Akarsh Singh | Software Engineer" />
-  <meta property="og:description" content="Software Engineer building enterprise-grade systems with Angular, React, Node.js, and AWS. LeetCode Knight (Global Rank 700) | Codeforces Specialist (1432)." />
-  <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
+  <meta property="og:description"
+    content="14 months of production ownership on a B2B platform. Cut the heaviest screen from 48s to 8s. Full-stack across Angular, Node.js, MySQL and AWS." />
+  <!-- Absolute URLs: social scrapers do not resolve relative paths -->
+  <meta property="og:image" content="https://akarshsingh-portfolio.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Akarsh Singh — Software Engineer" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Akarsh Singh | Software Engineer" />
-  <meta name="twitter:description" content="Software Engineer building enterprise-grade systems with Angular, React, Node.js, and AWS. LeetCode Knight (Global Rank 700) | Codeforces Specialist (1432)." />
-  <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
+  <meta name="twitter:description"
+    content="14 months of production ownership on a B2B platform. Cut the heaviest screen from 48s to 8s. Full-stack across Angular, Node.js, MySQL and AWS." />
+  <meta name="twitter:image" content="https://akarshsingh-portfolio.netlify.app/og-image.png" />
 
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="canonical" href="https://akarsh-singh.netlify.app/" />
+  <!-- Structured data, so a search for the name resolves to the right
+       professional identity rather than a namesake. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akarsh Singh",
+      "url": "https://akarshsingh-portfolio.netlify.app/",
+      "image": "https://akarshsingh-portfolio.netlify.app/og-image.png",
+      "jobTitle": "Software Engineer",
+      "email": "mailto:akarshs145@gmail.com",
+      "description": "Software engineer with 14 months of production ownership on a B2B marine procurement platform, working across MySQL, Node.js, Angular and AWS.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Varuna Sentinels B.V."
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Motilal Nehru National Institute of Technology, Allahabad"
+      },
+      "knowsAbout": [
+        "Backend engineering",
+        "Database performance optimization",
+        "Node.js",
+        "Angular",
+        "MySQL",
+        "AWS",
+        "Authentication and authorization",
+        "System design"
+      ],
+      "sameAs": [
+        "https://github.com/Akarsh2012",
+        "https://www.linkedin.com/in/akarsh-singh-24436a243/",
+        "https://leetcode.com/u/Akarsh_Singh_2211/",
+        "https://codeforces.com/profile/Unknown_2211"
+      ]
+    }
+  </script>
 </head>
 
 <body>

@@ -7,9 +7,17 @@ import { BsGithub } from "react-icons/bs";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <Card.Img
+        variant="top"
+        src={props.imgPath}
+        alt={`${props.title} screenshot`}
+        loading="lazy"
+        decoding="async"
+      />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
+        {/* h4 keeps the document outline sequential under the h3 tier
+            heading — Card.Title defaults to h5. */}
+        <Card.Title as="h4">{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>

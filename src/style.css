@@ -42,6 +42,21 @@ button:focus {
   opacity: 0;
 }
 
+/* Shown while a lazily-loaded route is fetched. Same artwork as the
+   initial preloader, minus the id so the two can never collide. */
+.route-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999998;
+  background-color: #0c0513;
+  background-image: url(./Assets/pre.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #no-scroll {
   overflow: hidden;
   height: 100vh;
@@ -244,6 +259,9 @@ button:focus {
 }
 #tsparticles {
   position: fixed !important;
+  /* Sits above section backgrounds but beneath page content, so it is
+     decorative rather than an invisible click-blocking overlay. */
+  z-index: 0 !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   width: 100%;
@@ -254,9 +272,14 @@ button:focus {
   padding-top: 80px !important;
 }
 
+/* The hero previously sat at z-index:-1, which put it underneath the
+   fixed, full-viewport particle canvas. Nothing here was interactive
+   before, so it went unnoticed — but the canvas was intercepting every
+   click in this section. Layering is now explicit:
+     hero background  ->  particles (0)  ->  hero content (1)
+   which looks identical and leaves the content clickable. */
 .home-section {
   position: relative;
-  z-index: -1;
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
@@ -265,6 +288,8 @@ button:focus {
 }
 
 .home-content {
+  position: relative;
+  z-index: 1;
   padding: 9rem 0 2rem !important;
   color: whitesmoke;
   text-align: left;
@@ -539,6 +564,212 @@ button:focus {
 }
 
 /* --------- */
+/* Deep dives */
+/* --------- */
+.deepdive-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: left;
+  padding: 26px 24px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+  transition: all 0.4s ease;
+  text-decoration: none !important;
+}
+
+.deepdive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(199, 112, 240, 0.3);
+  border-color: rgba(200, 137, 230, 0.9);
+}
+
+.deepdive-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.deepdive-card:hover .deepdive-title {
+  color: #c770f0;
+}
+
+.deepdive-blurb {
+  color: #ccc;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.deepdive-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  color: #c770f0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* --------- */
+/* Currently building */
+/* --------- */
+.ongoing-card {
+  text-align: left;
+  padding: 28px 26px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+}
+
+.ongoing-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+
+@media (max-width: 767px) {
+  .ongoing-intro {
+    margin-top: 20px;
+  }
+}
+
+.ongoing-title {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.ongoing-badge {
+  background: linear-gradient(135deg, #623686, #c770f0);
+  color: white;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ongoing-lead {
+  color: #ccc;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.ongoing-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #c770f0 !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.ongoing-link:hover {
+  text-decoration: underline !important;
+}
+
+.ongoing-status {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(200, 137, 230, 0.22);
+}
+
+.ongoing-sub {
+  color: #c770f0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ongoing-sub-wide {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(200, 137, 230, 0.22);
+}
+
+.ongoing-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ongoing-done,
+.ongoing-wip {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  color: #ccc;
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.ongoing-done::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2ed573;
+  font-weight: 700;
+}
+
+.ongoing-wip::before {
+  content: "\25CB";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #b3b3b3;
+}
+
+/* Roadmap feature tiles */
+.feature-card {
+  height: 100%;
+  padding: 18px 16px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: rgba(199, 112, 240, 0.07);
+  border: 1px solid rgba(200, 137, 230, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 137, 230, 0.75);
+  background: rgba(199, 112, 240, 0.12);
+}
+
+.feature-icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.feature-title {
+  color: white;
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.feature-detail {
+  color: #b3b3b3;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* --------- */
 /* About */
 /* --------- */
 
@@ -579,6 +810,68 @@ button:focus {
 .tech-icon-images {
   padding: 20px !important;
   line-height: 1.6 !important;
+}
+
+/* Working-knowledge variant: same card, dashed and dimmed so the
+   distinction reads at a glance without adding a second visual style */
+.tech-icons-work {
+  opacity: 0.62 !important;
+  border-style: dashed !important;
+  box-shadow: none !important;
+}
+
+.tech-icons-work:hover {
+  opacity: 0.95 !important;
+  border-style: dashed !important;
+}
+
+.tech-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-bottom: 34px;
+}
+
+.tech-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+}
+
+.tech-legend-swatch {
+  display: inline-block;
+  width: 26px;
+  height: 15px;
+  border-radius: 5px;
+  flex: none;
+}
+
+.tech-legend-prod {
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  background: rgba(199, 112, 240, 0.15);
+}
+
+.tech-legend-work {
+  border: 1.7px dashed rgba(200, 137, 230, 0.637);
+  opacity: 0.62;
+}
+
+/* Visually hidden, still announced by screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 .quote-card-view {
@@ -1447,4 +1740,703 @@ a.contact-info-value:hover {
 .github-stats-img {
   border-radius: 10px;
   max-width: 100%;
+}
+
+/* --------- */
+/* Architecture diagrams */
+/* --------- */
+.dg-figure {
+  margin: 30px 0;
+  padding: 22px 20px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+}
+
+.dg-caption {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(200, 137, 230, 0.22);
+  color: #b3b3b3;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* ---- pipeline ---- */
+.dg-flow + .dg-flow {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(200, 137, 230, 0.28);
+}
+
+.dg-flow-title {
+  color: #c770f0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.dg-nodes {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dg-node-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.dg-node {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  background: rgba(12, 5, 19, 0.55);
+  border: 1px solid rgba(199, 112, 240, 0.3);
+  min-width: 0;
+}
+
+.dg-accent {
+  border-color: rgba(199, 112, 240, 0.75);
+  background: rgba(199, 112, 240, 0.15);
+}
+
+.dg-pos {
+  border-color: rgba(46, 213, 115, 0.45);
+  background: rgba(46, 213, 115, 0.13);
+}
+
+.dg-node-label {
+  color: #fff;
+  font-size: 0.87rem;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.dg-node-sub {
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  overflow-wrap: break-word;
+}
+
+.dg-arrow {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.dg-arrow-line {
+  width: 2px;
+  flex: 1;
+  background: rgba(200, 137, 230, 0.45);
+}
+
+.dg-arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid rgba(200, 137, 230, 0.75);
+}
+
+@media (min-width: 768px) {
+  .dg-nodes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    row-gap: 8px;
+  }
+
+  .dg-node-wrap {
+    flex-direction: row;
+    align-items: stretch;
+    flex: 1 1 auto;
+  }
+
+  .dg-node {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .dg-arrow {
+    flex-direction: row;
+    align-self: center;
+    height: auto;
+    width: 22px;
+    padding: 0 3px;
+  }
+
+  .dg-arrow-line {
+    width: auto;
+    height: 2px;
+    flex: 1;
+  }
+
+  .dg-arrow-head {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid rgba(200, 137, 230, 0.75);
+    border-right: none;
+  }
+}
+
+/* ---- before / after lanes ---- */
+.dg-lanes {
+  display: grid;
+  gap: 16px;
+}
+
+.dg-lane {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(199, 112, 240, 0.3);
+  min-width: 0;
+}
+
+.dg-lane-dim {
+  background: rgba(12, 5, 19, 0.55);
+}
+
+.dg-lane-accent {
+  background: rgba(199, 112, 240, 0.1);
+  border-color: rgba(199, 112, 240, 0.7);
+}
+
+.dg-lane-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(200, 137, 230, 0.22);
+}
+
+.dg-lane-name {
+  color: #ddd;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.dg-lane-verdict {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dg-lane-dim .dg-lane-verdict {
+  color: #b3b3b3;
+}
+
+.dg-lane-accent .dg-lane-verdict {
+  color: #c770f0;
+}
+
+.dg-lane-steps {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.dg-lane-step {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 8px;
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.dg-step-index {
+  color: #c770f0;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+@media (min-width: 800px) {
+  .dg-lanes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---- layer stack ---- */
+.dg-stack-wrap {
+  display: grid;
+  gap: 16px;
+}
+
+.dg-stack {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dg-layer {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  border-radius: 8px;
+  background: rgba(12, 5, 19, 0.55);
+  border: 1px solid rgba(199, 112, 240, 0.3);
+}
+
+.dg-layer-index {
+  color: #c770f0;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding-top: 2px;
+}
+
+.dg-layer-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.dg-layer-name {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dg-layer-detail {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.dg-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(12, 5, 19, 0.7);
+  border: 1px dashed rgba(200, 137, 230, 0.5);
+  min-width: 0;
+}
+
+.dg-aside-name {
+  color: #c770f0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.dg-aside-detail {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 900px) {
+  .dg-stack-wrap {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+/* --------- */
+/* Case-study extras on a post */
+/* --------- */
+.cs-meta {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 8px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.7);
+  border: 1px solid rgba(200, 137, 230, 0.3);
+  text-align: left;
+}
+
+.cs-meta-item dt {
+  color: #c770f0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.cs-meta-item dd {
+  color: #ccc;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cs-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.cs-questions {
+  margin-top: 40px;
+  padding: 24px 22px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+  text-align: left;
+}
+
+.cs-questions-kicker {
+  color: #c770f0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cs-questions-title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cs-questions-lead {
+  color: #ccc;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+
+.cs-question-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0 0;
+}
+
+.cs-question {
+  position: relative;
+  padding: 14px 0 14px 26px;
+  border-top: 1px solid rgba(200, 137, 230, 0.22);
+  color: #ddd;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.cs-question::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  color: #c770f0;
+  font-weight: 700;
+}
+
+/* --------- */
+/* Selected Engineering Impact */
+/* --------- */
+.impact-section {
+  position: relative;
+  padding-top: 40px !important;
+  padding-bottom: 60px !important;
+}
+
+.impact-lead {
+  color: #ccc;
+  text-align: center;
+  max-width: 62ch;
+  margin: 0 auto 26px;
+  font-size: 0.95rem;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: left;
+  padding: 24px 22px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+  transition: all 0.4s ease;
+  text-decoration: none !important;
+}
+
+.impact-card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(199, 112, 240, 0.3);
+  border-color: rgba(200, 137, 230, 0.9);
+}
+
+.impact-metric {
+  color: #c770f0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  overflow-wrap: break-word;
+}
+
+.impact-label {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.impact-detail {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.impact-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  color: #c770f0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------- */
+/* Hero proof + CTAs */
+/* --------- */
+.home-proof {
+  color: #ddd;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  text-align: left;
+  max-width: 46rem;
+  padding-left: 50px;
+  padding-right: 15px;
+  margin-bottom: 22px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-left: 50px;
+  padding-right: 15px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #fff !important;
+  text-decoration: none !important;
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  background: rgba(30, 24, 54, 0.6);
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  border-color: #c770f0;
+  box-shadow: 0 5px 20px rgba(199, 112, 240, 0.28);
+}
+
+.home-btn-primary {
+  background: linear-gradient(135deg, #623686, #c770f0);
+  border-color: transparent;
+}
+
+.home-btn-primary:hover {
+  box-shadow: 0 5px 20px rgba(199, 112, 240, 0.45);
+}
+
+/* The hero's 50px inset is desktop-only; on a phone it eats a
+   sixth of the viewport. */
+@media (max-width: 767px) {
+  .home-proof,
+  .home-actions {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .home-proof {
+    font-size: 0.94rem;
+  }
+
+  .home-btn {
+    flex: 1 1 auto;
+    padding: 0 16px;
+  }
+}
+
+/* --------- */
+/* Project tier headings */
+/* --------- */
+.project-tier {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  color: #c770f0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 26px 0 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(200, 137, 230, 0.22);
+}
+
+.project-tier-note {
+  color: #b3b3b3;
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+
+/* --------- */
+/* Single-page anchors */
+/* --------- */
+/* The navbar is fixed, so an anchored section must reserve room for it
+   or its heading lands underneath. Each page already carries its own
+   150px top padding, so this only needs to cover the bar itself. */
+.onepage-anchor {
+  scroll-margin-top: 70px;
+}
+
+/* Deliberately NOT setting html{scroll-behavior:smooth}: it overrides
+   programmatic scrolls too, turning a long deep-link jump into a very
+   slow animation that can be interrupted mid-flight. Scroll behaviour
+   is chosen per-call in ScrollToTop instead. */
+
+/* --------- */
+/* GitHub stats (rendered from the public API) */
+/* --------- */
+.gh-tile {
+  height: 100%;
+  padding: 22px 14px;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+  transition: all 0.4s ease;
+}
+
+.gh-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(199, 112, 240, 0.3);
+}
+
+.gh-tile-value {
+  display: block;
+  color: #c770f0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.gh-tile-label {
+  display: block;
+  color: #b3b3b3;
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+.gh-langs {
+  padding: 24px 22px;
+  border-radius: 10px;
+  background: rgba(30, 24, 54, 0.9);
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
+  text-align: left;
+}
+
+.gh-langs-title {
+  color: #c770f0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.gh-lang {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gh-lang-name {
+  color: #fff;
+  font-size: 0.88rem;
+  overflow-wrap: break-word;
+}
+
+.gh-lang-track {
+  height: 8px;
+  border-radius: 15px;
+  background: rgba(12, 5, 19, 0.7);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.gh-lang-fill {
+  display: block;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #623686, #c770f0);
+}
+
+.gh-lang-pct {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.gh-updated {
+  color: #8f88a0;
+  font-size: 0.76rem;
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(200, 137, 230, 0.18);
+}
+
+@media (max-width: 575px) {
+  .gh-lang {
+    grid-template-columns: 5rem minmax(0, 1fr) 2.6rem;
+    gap: 8px;
+  }
+  .gh-tile-value {
+    font-size: 1.8rem;
+  }
 }
